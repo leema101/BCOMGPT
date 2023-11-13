@@ -33,13 +33,13 @@ if "messages" not in st.session_state:
 if "retry_error" not in st.session_state:
     st.session_state.retry_error = 0
 
-st.set_page_config(page_title="Bible Commentary")
-st.sidebar.title("Bible Commentary")
+st.set_page_config(page_title="Systematic Theology GPT")
+st.sidebar.title("Systematic Theology GPT")
 st.sidebar.divider()
 st.sidebar.markdown("", unsafe_allow_html=True)
 st.sidebar.markdown("Current Version: 0.0.1")
-st.sidebar.markdown("Using gpt-4-1106-preview API")
-st.sidebar.markdown(st.session_state.session_id)
+st.sidebar.markdown(f"Using {MODEL}")
+#st.sidebar.markdown(st.session_state.session_id)
 st.sidebar.divider()
 
 if "assistant" not in st.session_state:

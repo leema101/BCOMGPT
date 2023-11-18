@@ -64,7 +64,7 @@ elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == 
 
     for thread_message in st.session_state.messages.data:
         for message_content in thread_message.content:
-            st.markdown('.')
+            #st.markdown('.')
             # Access the actual text content
             message_content = message_content.text
             annotations = message_content.annotations

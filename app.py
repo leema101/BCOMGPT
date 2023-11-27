@@ -42,6 +42,10 @@ st.sidebar.markdown(f"Using {MODEL}")
 #st.sidebar.markdown(st.session_state.session_id)
 st.sidebar.divider()
 
+if prompt := st.chat_input("What is your question?"):
+    with st.chat_message('user'):
+        st.write(prompt)
+
 if "assistant" not in st.session_state:
     openai.api_key = st.secrets["OPENAI_API_KEY"]
 
@@ -95,9 +99,6 @@ elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == 
                     message_text = content_part.text.value
                     st.markdown(message_text)
 
-if prompt := st.chat_input("What is your question?"):
-    with st.chat_message('user'):
-        st.write(prompt)
 
     # Add message to the thread
     st.session_state.messages = client.beta.threads.messages.create(
